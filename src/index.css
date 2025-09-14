@@ -12,6 +12,10 @@ body {
   background-color: #212121;
   color: #333;
 }
+#root {
+  display: flex;
+  flex-direction: column;
+}
 header {
   width: 100%;
 }
@@ -87,13 +91,12 @@ footer {
   color: white;
   text-align: center;
   padding: 10px 0;
-  position: fixed;
-  bottom: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
   border-top: 1px solid white;
+  margin-top: auto;
 }
 footer div {
   display: flex;
@@ -167,21 +170,21 @@ footer div a:hover {
   padding: 3rem;
 }
 .skill-card {
-  position: relative;
   width: 250px;
   background: #111;
   border-radius: 10px;
-  padding: 3.5rem 1rem 1rem; /* 🟡 top = enough space for header */
   display: flex;
   flex-direction: column;
   color: white;
   gap: 0.7rem;
-  overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  /* justify-content: center; */
+  align-items: center;
 }
-
+.skill-card button {
+  margin-top: auto;
+}
 .card-header {
-  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -448,6 +451,7 @@ h2 {
   outline: none;
   border: none;
   font-size: 1.1rem;
+  white-space: nowrap;
 }
 .sort-options button:hover {
   transform: scale(1.05);
@@ -495,82 +499,20 @@ h2 {
   scrollbar-width: thin;
   scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
 }
-/*Mobile Responsive Styles*/
-@media screen and (max-width: 768px) {
+
+@media screen and (max-width: 576px) {
   header nav {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
   }
-
-  header nav div a {
-    font-size: 1rem;
-    padding: 0.4rem 0.6rem;
-  }
-
-  .dashboard > container {
-    padding: 2rem;
-    gap: 1.5rem;
-  }
-
-  .dashboard > container p {
-    font-size: 1.5rem;
-    max-width: 100%;
-  }
-
-  .all-skill {
-    grid-template-columns: repeat(2, 1fr);
-    padding: 1rem;
-    gap: 1rem;
-  }
-
-  .skill-card {
-    width: 100%;
-    max-width: 300px;
-    padding: 3rem 1rem 1rem;
-  }
-
-  .create-skill-box {
-    width: 90%;
-    padding: 1.5rem;
-    font-size: 1rem;
-  }
-
-  .form form {
-    width: 90%;
-    padding: 1rem;
-  }
-
-  .search form {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .searchbar {
-    min-width: 100%;
-    font-size: 1.2rem;
-  }
-
-  .back-btn-container .sort-options {
-    flex-direction: column;
-    gap: 1rem;
-    padding-inline: 0;
-  }
-
-  .notification-bar h1,
-  .notification-bar h2 {
-    font-size: 1.2rem;
-  }
-
-  .notification-bar ul li {
-    font-size: 1rem;
-  }
-}
-
-@media screen and (max-width: 480px) {
   header h1 {
     font-size: 1.5rem;
     padding: 15px;
+  }
+  .user-nav {
+    display: flex;
+    flex-flow: row nowrap;
   }
 
   .dashboard > container p {
@@ -585,7 +527,9 @@ h2 {
   }
 
   .all-skill {
-    grid-template-columns: 1fr;
+    display: flex;
+    gap: 1rem;
+    flex-flow: column nowrap;
     padding: 0.5rem;
   }
 
@@ -624,5 +568,11 @@ h2 {
   .about-page p,
   .about-page ul li {
     font-size: 1rem;
+  }
+  .back-btn-container > .sort-options {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0.7rem;
   }
 }
