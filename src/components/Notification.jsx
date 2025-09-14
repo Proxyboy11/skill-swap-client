@@ -11,7 +11,7 @@ const NotificationBar = () => {
   const navigate = useNavigate();
   const notiFetch = async () => {
     try {
-      const res = await fetch(`http://localhost:3000/api/v1/skills`);
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/v1/skills`);
       const data = await res.json();
       const userSkills = data.obj.filter((skill) => skill.userEmail === email);
       const allSwappers = userSkills.flatMap((skill) => skill.swappedBy);
