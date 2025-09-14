@@ -1,0 +1,497 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #212121;
+  color: #333;
+}
+header {
+  width: 100%;
+}
+header h1 {
+  text-align: center;
+  padding: 20px;
+  background-color: #181818;
+  color: #e1e1e6;
+}
+header nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #181818;
+  align-items: center;
+  border-bottom: 1px solid white;
+  border-top: 1px solid white;
+}
+header nav img {
+  width: 50px;
+  height: auto;
+}
+header nav div a {
+  text-decoration: none;
+  color: whitesmoke;
+  gap: 1.5rem;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+}
+header nav div a:hover {
+  text-decoration: underline;
+}
+.dashboard > container {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 3rem;
+  background-color: #212121;
+  min-height: calc(100vh - 180px);
+}
+.dashboard > container p {
+  font-size: 2rem;
+  color: whitesmoke;
+  display: grid;
+  max-width: 650px;
+  line-height: 1.6;
+  text-align: center;
+}
+.dashboard > container button,
+.form form button,
+.logout-btn {
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  background-color: #8b5cf6;
+  color: #e0e0e0;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.dashboard > container button:hover,
+.form form button:hover,
+.logout-btn:hover {
+  background-color: #7c3aed;
+  color: #fff;
+  border: 1px solid white;
+  transform: scale(1.1);
+}
+footer {
+  width: 100%;
+  background-color: #181818;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  border-top: 1px solid white;
+}
+footer div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+footer p {
+  color: peachpuff;
+}
+footer div a {
+  text-decoration: none;
+  color: whitesmoke;
+  font-size: 1.2rem;
+}
+footer div a:hover {
+  background-color: #4caf50;
+  color: white;
+}
+.form {
+  background-color: #181818;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 180px);
+  padding: 2rem;
+}
+.form form {
+  max-width: fit-content;
+  /* border: 2px solid white; */
+  padding: 1rem;
+  color: peachpuff;
+  border-radius: 10px;
+  background-color: #212121;
+}
+.form form div {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+.form form div label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
+  gap: 1rem;
+}
+.form form div label input {
+  border: none;
+  outline: none;
+  border-bottom: 2px solid white;
+  background-color: transparent;
+  color: whitesmoke;
+  font-size: 1.2rem;
+}
+.help a {
+  text-decoration: underline;
+  color: #4caf50;
+}
+.help a:hover {
+  text-decoration: none;
+  cursor: pointer;
+  color: whitesmoke;
+}
+.all-skill {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin: 1rem;
+  gap: 1rem;
+  min-height: 100 vh;
+  padding: 3rem;
+}
+.skill-card {
+  position: relative;
+  width: 250px;
+  background: #111;
+  border-radius: 10px;
+  padding: 3.5rem 1rem 1rem; /* 🟡 top = enough space for header */
+  display: flex;
+  flex-direction: column;
+  color: white;
+  gap: 0.7rem;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.card-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  background-color: #6c00ff;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom: 2px solid white;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.3rem;
+  line-height: 1.3;
+  text-transform: capitalize;
+  z-index: 1;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.skill-card span {
+  color: white;
+}
+.user-nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem;
+  background-color: #181818;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
+}
+.user-nav a {
+  text-decoration: none;
+}
+.user-nav a:hover {
+  text-decoration: underline;
+}
+.user-nav a h2 {
+  color: white;
+  text-transform: capitalize;
+}
+.create-skill-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  border: 1px dashed #e1e1e6;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #e1e1e6;
+  background-color: #181818;
+  opacity: 0.8;
+}
+.create-skill-box:hover {
+  border: 1px solid white;
+  opacity: 1;
+}
+.create-skill form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 2rem;
+  border-radius: 10px;
+  color: whitesmoke;
+}
+.create-skill form label {
+  display: flex;
+  gap: 1rem;
+}
+.create-skill form label input {
+  border: none;
+  outline: none;
+  border-bottom: 2px solid darkgrey;
+  background-color: transparent;
+  color: white;
+  font-size: 1.2rem;
+}
+.create-skill form button {
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  background-color: #45a049;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.delete-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  font-size: 1.7;
+}
+.delete-cont div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.delete-cont div button {
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  padding: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.delete-cont div button:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
+  border: 1px solid white;
+}
+.about-page {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  color: #333;
+  line-height: 1.7;
+}
+
+.about-page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #0f172a;
+  border-bottom: 2px solid #00bcd4;
+  padding-bottom: 5px;
+}
+
+.about-page h2 {
+  margin-top: 30px;
+  font-size: 1.6rem;
+  color: #0284c7;
+}
+
+.about-page p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.about-page ul {
+  list-style: circle inside;
+  padding-left: 0;
+  margin-bottom: 20px;
+}
+
+.about-page ul li {
+  margin-bottom: 8px;
+  font-size: 1.05rem;
+}
+
+.about-page a {
+  color: #0ea5e9;
+  text-decoration: underline;
+}
+
+.about-page a:hover {
+  text-decoration: none;
+}
+
+.about-page footer {
+  margin-top: 40px;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #666;
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 2rem;
+}
+.search form {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+.searchbar {
+  outline: none;
+  border: none;
+  background: transparent;
+  border-bottom: 2px solid whitesmoke;
+  min-width: 400px;
+  font-size: 1.5rem;
+  color: whitesmoke;
+}
+.searchbar::placeholder {
+  font-size: 1.2rem;
+  color: white;
+}
+.failed-search {
+  font-size: 1.5rem;
+  color: crimson;
+  position: fixed;
+  left: 500px;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  text-transform: capitalize;
+}
+.profile h2 {
+  white-space: nowrap;
+}
+.notification-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+.notification-bar h1,
+h2 {
+  color: whitesmoke;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.notification-bar ul li {
+  color: peachpuff;
+  font-size: 1.2rem;
+}
+.back-btn-container {
+  margin: 0.8rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+.back-btn-container .sort-options {
+  display: flex;
+  flex-direction: row;
+  padding-inline: 2rem;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 3rem;
+}
+.sort-options button {
+  background-color: #ff6b6b;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  font-size: 1.1rem;
+}
+.sort-options button:hover {
+  transform: scale(1.05);
+  border: 1px solid white;
+}
+.back-btn {
+  max-width: max-content;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  margin-top: 1.2rem;
+  margin-left: 1.2rem;
+  color: white;
+  cursor: pointer;
+  font-size: 1.4rem;
+}
+.back-btn:hover {
+  opacity: 0.8;
+  background-color: #181818;
+  transform: scale(1.05);
+}
+/* For WebKit browsers (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* ChatGPT keeps it clean */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.1); /* subtle thumb */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* little brighter on hover */
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+}
