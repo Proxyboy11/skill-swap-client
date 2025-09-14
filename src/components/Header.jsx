@@ -1,4 +1,3 @@
-import appLogo from "../assets/appLogo.png";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { CiLogin } from "react-icons/ci";
@@ -19,7 +18,7 @@ const Header = () => {
       <h1>Skill Swap</h1>
       <nav>
         <Link to={isLoggedIn ? "/skills" : "/"} style={{ cursor: "pointer" }}>
-          <img src={appLogo} />
+          <img src="/appLogo.png" alt="Logo" />
         </Link>
         <div>
           <Link to="/contact">Contact</Link>
