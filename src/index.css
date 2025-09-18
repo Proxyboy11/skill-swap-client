@@ -601,4 +601,19 @@ h2 {
   li {
     font-size: 0.8rem;
   }
+  .create-skill form label {
+    display: flex;
+    flex-direction: column;
+  }
+  .delete-cont {
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .delete-cont div {
+    flex-direction: column;
+    gap: 1rem;
+  }
 }
