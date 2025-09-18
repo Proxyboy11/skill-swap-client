@@ -22,7 +22,7 @@ const UserNav = () => {
         <Link to={"/skills/user/search"}>
           <h2>Search User</h2>
         </Link>
-        <div style={{ display: "flex", flexDirection: "row", gap: "1rem" }}>
+        <div>
           <CgProfile
             style={{ color: "white", fontSize: "1.5rem", cursor: "pointer" }}
             onClick={() => navigate("/skills/user/profile")}
