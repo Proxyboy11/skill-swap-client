@@ -63,7 +63,9 @@ const EditSkill = () => {
           <h2>Portfolio Link</h2>
           <input type="text" placeholder="Enter portfolio link" name="folio" />
         </label>
-        <button type="submit">Edit Skill</button>
+        <button id="edit-btn" type="submit">
+          Edit Skill
+        </button>
       </form>
     </div>
   );

@@ -61,7 +61,9 @@ const CreateSkill = () => {
           <h2>Portfolio Link</h2>
           <input type="text" placeholder="Enter portfolio link" name="folio" />
         </label>
-        <button type="submit">Create Skill</button>
+        <button type="submit" id="create-btn">
+          Create Skill
+        </button>
       </form>
     </div>
   );
